@@ -27,7 +27,7 @@ Siempre que se tengan rutar con variables, colocarlar de las últimas, ya que, e
 si se llega a llamar un endpoint con una variable y se está colocando en la ruta el nombre de la ruta que lleva a una funcion distinta a una con parámetros,
 express tomará primero la funcion con variables porque asumirá que lo que viene luego es una variable y no una ruta distinta de un endpoint.--------------------------------------------------------------------------------------------------------------------------------------------------------- */
 // Middleware use
-// router.use(verificarToken)
+router.use(verificarToken)
 
 //endpoint(s) para Arriendos
 router.post("/arriendos", crearArriendo); // Listo
@@ -37,6 +37,6 @@ router.get("/arriendos/activos", arriendosActivos); // Listo
 router.get("/arriendos/finalizados", arriendosFinalizados); // Listo
 
 //enpoint(s) para Usuarios
-router.put("/usuarios", cambiarPassword); //Listo
+router.put("/usuarios/cambiar", cambiarPassword); //Listo
 
 export default router;

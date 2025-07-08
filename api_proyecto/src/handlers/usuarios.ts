@@ -81,7 +81,7 @@ export const iniciarSesion = async(request: Request , response: Response) =>{
         const usuario = await Usuario.findByPk(email)
 
         if(!usuario || !bcrypt.compareSync( password, usuario.password )){
-            response.status(400).json('Error, El usuario ingresado no existe x.x')
+            response.status(400).json('Error. Las credenciales no son correctas x.x')
         }
 
         const token = jwt.sign({ email: usuario.email }, secretKey,{ expiresIn: '1h' })
